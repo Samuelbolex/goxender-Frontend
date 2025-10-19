@@ -1,68 +1,38 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import "tailwindcss";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+html,
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+  background: var(--color-dark-bg);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+@theme {
+  --color-primary: #0273b5; /* default blue-ish */
+  --color-primary-50: #c0e1f8; /* default blue-ish */
+  --color-secondary: #10b981; /* green-ish */
+  --color-black: #21252c;
+  --color-dark-bg: #141924;
+  --color-dark-bg-200: #1c222d;
+  --color-foreground: #1c222d;
+  --color-text: #8a9199;
+  --color-stroke: #6d7688;
+  --color-stroke-200: #232938;
+  --color-field-selected: #191f2c;
+  --color-white: #ffffff;
+  --color-custom-white: #d7e0ee;
+  --color-custom-gray-100: #76889a;
+  --color-custom-gray-200: #babfc5;
+  --color-custom-gray-300: #cfd5db;
+  --color-custom-gray-400: #d2d6db;
+  --color-custom-gray-500: #f1f2f6;
+  --color-custom-gray-600: #4b5563;
+  --color-custom-gray-700: #374151;
+  --color-custom-gray-800: #1f2937;
+  --color-custom-gray-900: #111827;
+  --color-custom-orange-900: #f8eac0; /* light orange */
 }
