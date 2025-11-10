@@ -1,7 +1,8 @@
 const LoginPage = () => {
   return (
-    <div className="w-screen h-screen flex items-center justify-center">
-      <div className="w-[90%] h-[90%]">
+    <div className="w-screen h-screen flex items-center justify-center md:px-[5rem]">
+      <div className="hidden md:visible md:flex flex-1"></div>
+      <div className="flex flex-none flex-col md:w-[30rem] w-[90%] h-[90%]">
         <div className="text-center text-[1.8rem] font-[600] text-white py-4">
           Sign In
         </div>
@@ -37,7 +38,7 @@ const LoginPage = () => {
           <div className="py-6">
             <div className="flex flex-row gap-2 items-center justify-center">
               <span className="text-text">Don't have an account? </span>
-              <a href="">
+              <a href="/registration" className="">
                 <span className="text-white">Create Account</span>
               </a>
             </div>
