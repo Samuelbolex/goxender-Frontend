@@ -1,6 +1,10 @@
+import { useEffect } from "react";
 import type { StepComponentProps } from "../stepper";
 
 const UserVerificationInstruction = ({ form }: StepComponentProps) => {
+  useEffect(() => {
+    console.log(form);
+  }, [form]);
   return (
     <div>
       <div>

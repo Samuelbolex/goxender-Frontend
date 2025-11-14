@@ -15,13 +15,14 @@ export const rememberEmailSlice = createSlice({
     saveRemeberEmail: (state, action) => {
       state.email = action.payload;
     },
-    resetRemeberEmail: (state) =>{
-      state.email = null
-    }
+    resetRemeberEmail: (state) => {
+      state.email = null;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { saveRemeberEmail, resetRemeberEmail } = rememberEmailSlice.actions;
+export const { saveRemeberEmail, resetRemeberEmail } =
+  rememberEmailSlice.actions;
 
 export default rememberEmailSlice.reducer;

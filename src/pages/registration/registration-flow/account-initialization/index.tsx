@@ -1,6 +1,10 @@
+import { useEffect } from "react";
 import type { StepComponentProps } from "../stepper";
 
 const AccountInitializationStep = ({ form }: StepComponentProps) => {
+  useEffect(() => {
+    console.log(form);
+  }, [form]);
   return (
     <>
       <div className="text-center text-[1.8rem] font-[600] text-white py-4">

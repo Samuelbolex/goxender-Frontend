@@ -15,9 +15,9 @@ export const emailSlice = createSlice({
     saveEmail: (state, action) => {
       state.email = action.payload;
     },
-    resetEmail:(state)=>{
-      state.email = null
-    }
+    resetEmail: (state) => {
+      state.email = null;
+    },
   },
 });
 

@@ -1,7 +1,12 @@
 import { genderList, titleList } from "@declared-types/index";
 import type { StepComponentProps } from "../stepper";
+import { useEffect } from "react";
 
 const CustomerInformationStep = ({ form }: StepComponentProps) => {
+  useEffect(() => {
+    console.log(form);
+  }, [form]);
+
   return (
     <div className="w-full">
       <div>

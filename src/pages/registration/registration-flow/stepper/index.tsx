@@ -21,8 +21,6 @@ const Stepper = ({ currentStep, form }: StepperProps) => {
         return <EmailVerificationStep form={form} />;
       case 2:
         return <CustomerInformationStep form={form} />;
-      case 2:
-        return <CustomerInformationStep form={form} />;
       case 3:
         return <UserVerificationInstruction form={form} />;
       default:

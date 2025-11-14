@@ -15,9 +15,9 @@ export const isLoginSlice = createSlice({
     saveIsLogin: (state, action) => {
       state.isLogin = action.payload;
     },
-    resetIsLogin: (state)=>{
-      state.isLogin = false
-    }
+    resetIsLogin: (state) => {
+      state.isLogin = false;
+    },
   },
 });
 

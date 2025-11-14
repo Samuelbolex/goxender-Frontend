@@ -1,4 +1,4 @@
-import type { ApiResponse, LoginPayload } from "@declared-types/index";
+import type { LoginPayload } from "@declared-types/index";
 import { resetIsLogin } from "@hooks/redux/slices/loginSlice";
 import { logout, saveToken } from "@hooks/redux/slices/tokenSlice";
 import { store } from "@hooks/redux/store";
@@ -63,7 +63,7 @@ const apiClient = axios.create({
 
 // Add a request interceptor
 apiClient.interceptors.request.use(
-  async (config) => {
+  async (config: any) => {
     // Get token (from localStorage, AsyncStorage, Redux, etc.)
     const token = store.getState().token.token;
     // For React Native: use AsyncStorage.getItem("token")
@@ -74,15 +74,15 @@ apiClient.interceptors.request.use(
 
     return config;
   },
-  (error) => {
+  (error: any) => {
     // Handle error
     return Promise.reject(error);
   }
 );
 
 apiClient.interceptors.response.use(
-  (response) => response,
-  async (error) => {
+  (response: any) => response,
+  async (error: any) => {
     const originalRequest = error.config;
     console.log("Interceptor", error);
 
@@ -104,15 +104,18 @@ apiClient.interceptors.response.use(
 
         console.log("MY DATA", data);
 
-        localStorage.setItem("token", data.data.accessToken);
-        localStorage.setItem("refreshToken", data.data.refreshToken);
+        const newToken = data.data.accessToken;
+        const newRefreshToken = data.data.refreshToken;
 
-        originalRequest.headers.Authorization = `Bearer ${data.data.accessToken}`;
+        localStorage.setItem("token", newToken);
+        localStorage.setItem("refreshToken", newRefreshToken);
+
+        originalRequest.headers.Authorization = `Bearer ${newToken}`;
         store.dispatch(
           saveToken({
-            token: data.data.accessToken,
-            refreshToken: data.data.refreshToken,
-          })
+            token: newToken,
+            refreshToken: newRefreshToken,
+          } as any)
         );
         console.log("Refresh token", store.getState().token.refreshToken);
         return axios(originalRequest);
@@ -130,9 +133,7 @@ apiClient.interceptors.response.use(
   }
 );
 
-export const auth = async (
-  payload: LoginPayload
-): Promise<ApiResponse | any> => {
+export const auth = async (payload: LoginPayload): Promise<any> => {
   try {
     const response = await apiClient.post("/auth/login", payload);
 
